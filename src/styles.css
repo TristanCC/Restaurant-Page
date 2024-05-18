@@ -1,0 +1,81 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+#root, #__next {
+  isolation: isolate;
+}
+
+/* end style reset */
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 1em;
+  border: 2px #ffffe3 solid;
+  border-radius: 1em;
+  width: auto;
+  height: 5em;
+}
+
+body {
+  background-color: #10100e;
+  color: #ffffe3;
+}
+
+#content {
+  border: 2px #ffffe3 solid;
+  border-radius: .5em;
+  width: auto;
+  padding: .5em;
+}
+
+.nav {
+  display: flex;
+  margin-top: .5em;
+}
+
+.footer {
+  margin-bottom: .5em;
+}
+
+button {
+  background: transparent;
+  border: #ffffe3 2px solid;
+  color: white;
+  border-radius: 1em;
+  padding: .25em;
+  margin-right: 1em;
+  width:100px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #272725;
+}

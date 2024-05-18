@@ -1,1 +1,26 @@
-console.log("AHHHHHHHHHHHHHH")
+import "./styles.css";
+import { renderNav } from "./header"
+import { renderFooter } from "./footer.js";
+import { renderHome } from "./home.js";
+//import { renderHome} from "./home.js"
+
+//const $body = document.querySelector("body");
+//const $content = document.getElementById("content");
+//$body.insertBefore(renderNav(), $content);
+//$body.appendChild(renderFooter());
+const $body = document.querySelector("body")
+const $content = document.getElementById("content")
+
+renderNav()
+renderHome()
+renderFooter()
+export {$body, $content}
+
+
+//function home() {
+//    renderNav()
+//    //renderHome()
+//    renderFooter()
+//}
+
+//home()
