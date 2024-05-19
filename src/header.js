@@ -6,6 +6,7 @@ function render() {
     const $ul = document.createElement("ul");
     navItems.forEach((item) => {
         const $button = document.createElement("button");
+        $button.id = `${item}`
         $button.textContent = item;
         $ul.appendChild($button);
     });
@@ -15,5 +16,9 @@ function render() {
     
     $wrapper.insertBefore($nav, $content)
 }
+
+
+
+
 
 export { render as renderNav };

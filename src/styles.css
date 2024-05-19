@@ -20,6 +20,7 @@ body {
   justify-content: space-between;
   height: 100vh;
   overflow: hidden;
+  max-height: 100vh;
 }
 img, picture, video, canvas, svg {
   display: block;
@@ -60,18 +61,21 @@ p, h1, h2, h3, h4, h5, h6 {
 
 ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   list-style: none;
   margin: 0;
   padding: 1em;
-  border: 2px #ffffe3 solid;
-  border-radius: 1em;
-  width: auto;
-  height: 5em;
+  padding-top: 1em;
+  /* border: 2px #ffffe3 solid; */
+  border-radius: 0 0 1em 1em;
+  width: 100vw;
+  height:auto;
   font-size: larger;
   background-color: rgba(var(--dark),0.1);
   backdrop-filter: blur(1rem);
+  row-gap:1em;
 }
 
 body {
@@ -81,17 +85,17 @@ body {
 
 .soup-video {
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 0%;
+  left: 0%;
   min-width: 100%;
   min-height: 100%;
   width: auto;
   height: auto;
-  transform: translate(-50%, -50%);
   object-fit: cover;
 }
 
 #content {
+  position: relative; /* Ensure relative positioning for absolutely positioned children */
   border: 2px rgb(var(--light)) solid;
   border-radius: .5em;
   width: auto;
@@ -101,26 +105,44 @@ body {
 }
 
 .nav {
-  display: flex;
-  margin-top: .5em;
+  display: inline-flex;
 }
 
 .footer {
-  margin-bottom: .5em;
+  display: flex;
+  justify-content: center;
+  padding: .5em 0 .5em 0;
+  width:100%;
+  background-color: rgba(var(--dark),0.1);
+  backdrop-filter: blur(1rem);
+
 }
 
 button {
   background: transparent;
   border: rgb(var(--light)) 2px solid;
   color: rgb(var(--light));
-  border-radius: 1em;
+  border-radius: .5em;
   padding: .25em;
   margin-right: 0.5em;
   margin-left: 0.5em;
-  width:100px;
+  width: clamp(125px, 15%, 25%);
+  min-width:auto;
 }
 
 button:hover {
   cursor: pointer;
   background-color: #272725;
+}
+
+/* menu styling  */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  min-width: 50vw;
+  min-height: 50vh;
+  justify-content: center;
+  align-items: center;
+
 }
