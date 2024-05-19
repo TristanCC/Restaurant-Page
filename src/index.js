@@ -8,13 +8,13 @@ import { renderHome } from "./home.js";
 //const $content = document.getElementById("content");
 //$body.insertBefore(renderNav(), $content);
 //$body.appendChild(renderFooter());
-const $body = document.querySelector("body")
+const $wrapper = document.querySelector(".wrapper")
 const $content = document.getElementById("content")
 
 renderNav()
 renderHome()
 renderFooter()
-export {$body, $content}
+export {$wrapper, $content}
 
 
 //function home() {

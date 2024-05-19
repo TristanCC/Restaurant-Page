@@ -1,4 +1,4 @@
-import { $body, $content } from "./index";
+import { $wrapper, $content } from "./index";
 
 
 function render() {
@@ -13,7 +13,7 @@ function render() {
     $nav.appendChild($ul);
     $nav.classList.add("nav")
     
-    $body.insertBefore($nav, $content)
+    $wrapper.insertBefore($nav, $content)
 }
 
 export { render as renderNav };

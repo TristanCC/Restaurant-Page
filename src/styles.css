@@ -1,3 +1,8 @@
+:root {
+  --light: 255, 255, 227;
+  --dark: 39, 39, 37;
+}
+
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -14,6 +19,7 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 100vh;
+  overflow: hidden;
 }
 img, picture, video, canvas, svg {
   display: block;
@@ -31,6 +37,27 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* end style reset */
 
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Ensure the video is behind other content */
+}
+
+.wrapper {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+}
+
 ul {
   display: flex;
   justify-content: center;
@@ -42,18 +69,35 @@ ul {
   border-radius: 1em;
   width: auto;
   height: 5em;
+  font-size: larger;
+  background-color: rgba(var(--dark),0.1);
+  backdrop-filter: blur(1rem);
 }
 
 body {
-  background-color: #10100e;
+  background-color: rgba(var(--dark),0.4);
   color: #ffffe3;
 }
 
+.soup-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
 #content {
-  border: 2px #ffffe3 solid;
+  border: 2px rgb(var(--light)) solid;
   border-radius: .5em;
   width: auto;
   padding: .5em;
+  background-color: rgba(var(--dark),0.1);
+  backdrop-filter: blur(1rem);
 }
 
 .nav {
@@ -67,11 +111,12 @@ body {
 
 button {
   background: transparent;
-  border: #ffffe3 2px solid;
-  color: white;
+  border: rgb(var(--light)) 2px solid;
+  color: rgb(var(--light));
   border-radius: 1em;
   padding: .25em;
-  margin-right: 1em;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
   width:100px;
 }
 
