@@ -19,7 +19,6 @@ renderHomePage()
 function renderHomePage() {
     $content.innerHTML = "";
     renderHome()
-
 }
 
 function renderMenuPage() {

@@ -102,6 +102,8 @@ body {
   padding: .5em;
   background-color: rgba(var(--dark),0.1);
   backdrop-filter: blur(1rem);
+  transition: all 0.6s ease-in-out;
+
 }
 
 .nav {
