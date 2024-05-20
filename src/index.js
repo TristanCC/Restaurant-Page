@@ -5,17 +5,16 @@ import { renderHome } from "./home.js";
 import { renderMenu } from "./menu.js";
 //import { renderHome} from "./home.js"
 
-//const $body = document.querySelector("body");
-//const $content = document.getElementById("content");
-//$body.insertBefore(renderNav(), $content);
-//$body.appendChild(renderFooter());
 const $wrapper = document.querySelector(".wrapper")
 const $content = document.getElementById("content")
+const $toggleButton = document.getElementById("toggleButton");
+const $sidebar = document.querySelector(".sidebar");
+const $video = document.querySelector(".soup-video")
 
 renderNav()
 renderFooter()
 renderHomePage()
-
+window.scrollTo(0,2)
 function renderHomePage() {
     $content.innerHTML = "";
     renderHome()
@@ -37,10 +36,24 @@ function renderContactPage() {
     renderContact()
 }
 
-function animatePlease() {
+$sidebar.style.visibility = 'hidden'
 
-}
+$toggleButton.addEventListener(('click'), () => {
+    if ($sidebar.style.width === '50%') {
+        $sidebar.style.width = '0'
+        $sidebar.style.visibility = 'hidden'
+    }
+    else {
+        $sidebar.style.width = '50%'
+        $sidebar.style.visibility = 'visible'
+    }
+})
 
+window.addEventListener('click',(e) => {
+    if (!e.target.classList.contains('sidebar') && $sidebar.style.width != 0 && !e.target.classList.contains('toggle-button')) {
+        $sidebar.style.width = 0
+    }
+})
 
 const $buttons = document.querySelectorAll("button")
 $buttons.forEach((button) => {
@@ -62,8 +75,13 @@ $buttons.forEach((button) => {
     })
 })
 
+$video.addEventListener("ended", () => {
+    $video.style.minWidth = "0"
+    $video.style.maxWidth = "0"
+})
 
-export {$wrapper, $content}
+
+export {$wrapper, $content, $sidebar}
 
 
 //function home() {
